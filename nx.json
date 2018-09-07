@@ -10,6 +10,12 @@
   "projects": {
     "material": {
       "tags": []
+    },
+    "currency": {
+      "tags": []
+    },
+    "currency-e2e": {
+      "tags": []
     }
   }
 }

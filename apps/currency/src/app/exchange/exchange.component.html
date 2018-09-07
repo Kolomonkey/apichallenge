@@ -1,0 +1,13 @@
+<div class='container'>
+  <div class='child'>
+  <api-exchange-view
+    [currencyPairs]='currencyPairs'
+    (selectPair)='getSelectedPair($event)'>
+  </api-exchange-view>
+  </div>
+  <div class='child'>
+  <api-exchange-details
+    [selectedPair]='selectedPair'>
+  </api-exchange-details>
+  </div>
+</div>

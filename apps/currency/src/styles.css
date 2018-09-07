@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Oswald');
+
+h1, h2, h3, h4, h5, h6, mat-card-title {
+  font-family: 'Oswald', sans-serif!important;
+}
+p, div, a {
+  font-family: 'Open Sans', sans-serif!important;
+}
+body {
+  margin:0;
+  padding:0;
+  background: no-repeat fixed linear-gradient(110deg, hsl(0, 0%, 93%) 40%, rgba(0, 0, 0, 0) 30%), radial-gradient(farthest-corner at 0% 0%, hsl(0, 0%, 95%) 70%, hsl(0, 0%, 97%) 70%);
+}

@@ -1,0 +1,19 @@
+h3 {
+  font-size: 36px;
+  line-height:0;
+  text-align:center;
+}
+mat-card {
+  width:500px;
+}
+mat-list-item {
+  padding:4px 30px;
+}
+mat-grid-tile:hover {
+  background:whitesmoke;
+  cursor: pointer;
+  font-weight:bold;
+}
+mat-card-content {
+  padding-top:20px;
+}

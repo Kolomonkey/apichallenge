@@ -1,0 +1,11 @@
+<mat-card>
+  <mat-card-title>
+  <h3 *ngIf='selectedPair'>{{selectedPair.firstCurrency}} -> {{selectedPair.lastCurrency}}</h3>
+  <h3 *ngIf='!selectedPair'>Select Currency Pair</h3>
+  <mat-divider></mat-divider>
+  </mat-card-title>
+  <mat-card-content *ngIf='selectedPair'>
+    <h2>$1 {{selectedPair.firstCurrency}} =</h2>
+    <h1>{{selectedPair.price}} {{selectedPair.lastCurrency}}</h1>
+  </mat-card-content>
+</mat-card>

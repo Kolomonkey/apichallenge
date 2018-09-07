@@ -1,0 +1,26 @@
+h3 {
+  font-size: 36px;
+  line-height:0;
+}
+h2 {
+  line-height: auto;
+  padding-top:20px;
+  font-size: 28px;
+}
+h1 {
+  line-height:2em;
+}
+mat-card {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+mat-card-title {
+  text-align:center;
+  font-weight:bold;
+}
+mat-card-content {
+  text-align:center;
+}
+.equal {
+  font-size: 48px;
+}
