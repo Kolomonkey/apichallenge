@@ -16,6 +16,18 @@
     },
     "currency-e2e": {
       "tags": []
+    },
+    "pastebin": {
+      "tags": []
+    },
+    "pastebin-e2e": {
+      "tags": []
+    },
+    "glot": {
+      "tags": []
+    },
+    "glot-e2e": {
+      "tags": []
     }
   }
 }

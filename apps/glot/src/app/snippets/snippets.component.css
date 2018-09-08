@@ -1,0 +1,7 @@
+.container {
+  height:calc(100vh - 64px);
+  display:grid;
+  grid-template-columns: 40% 30%;
+  justify-content: space-around;
+  align-items:center;
+}

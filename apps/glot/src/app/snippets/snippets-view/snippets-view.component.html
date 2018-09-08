@@ -1,0 +1,11 @@
+<mat-card>
+  <mat-list>
+    <mat-list-item *ngFor='let snippet of allSnippets' class='mat-list-option' (click)='selectSnippet.emit(snippet.id)'>
+      <div class='container'>
+        <div><h2>{{snippet.title}}</h2></div>
+        <div><h2>{{snippet.created | date}}</h2></div>
+        <div class='delete'><button mat-icon-button color='warn' (click)='deleteSnippet.emit(snippet.id); $event.stopImmediatePropagation()'><mat-icon matListIcon>delete</mat-icon></button></div>
+      </div>
+    </mat-list-item>
+  </mat-list>
+</mat-card>

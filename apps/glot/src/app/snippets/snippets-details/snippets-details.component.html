@@ -1,0 +1,27 @@
+<mat-card>
+  <mat-card-title>
+    <h1 *ngIf='!selectedSnippetName'>Create a snippet!</h1>
+    <h1 *ngIf='selectedSnippetName'>{{selectedSnippetName}}</h1>
+  </mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+  <form [formGroup]='snippetForm'>
+
+    <mat-form-field>
+      <input matInput required placeholder='Title' formControlName="title">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput required placeholder='File Name' formControlName="fileName">
+    </mat-form-field>
+
+    <mat-form-field>
+        <textarea matInput required placeholder='Content' formControlName="content"></textarea>
+    </mat-form-field>
+  </form>
+  </mat-card-content>
+  <mat-card-actions>
+      <button mat-raised-button color='primary' [disabled]='!snippetForm.valid' (click)='submitForm.emit(snippetForm.value); resetForm.emit()'>SUBMIT</button>
+      <button mat-raised-button color='warn' (click)='resetForm.emit()'>RESET</button>
+    </mat-card-actions>
+</mat-card>

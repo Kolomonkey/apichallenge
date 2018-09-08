@@ -13,8 +13,10 @@ import {
   MatDialogModule,
   MatExpansionModule,
   MatProgressBarModule,
-  MatGridListModule
+  MatGridListModule,
+  MatFormFieldModule
 } from '@angular/material';
+import { PastesComponent } from './pastes/pastes.component';
 
 @NgModule({
   imports: [
@@ -31,7 +33,8 @@ import {
     MatDialogModule,
     MatExpansionModule,
     MatProgressBarModule,
-    MatGridListModule
+    MatGridListModule,
+    MatFormFieldModule
   ],
   exports: [
     MatButtonModule,
@@ -46,7 +49,9 @@ import {
     MatDialogModule,
     MatExpansionModule,
     MatProgressBarModule,
-    MatGridListModule
-  ]
+    MatGridListModule,
+    MatFormFieldModule
+  ],
+  declarations: [PastesComponent]
 })
 export class MaterialModule {}

@@ -1,0 +1,17 @@
+<div class='container'>
+  <div>
+    <api-snippets-view
+    [allSnippets]='allSnippets'
+    (deleteSnippet)='deleteSnippet($event)'
+    (selectSnippet)='getSnippet($event)'
+    ></api-snippets-view>
+  </div>
+  <div>
+    <api-snippets-details
+    [selectedSnippetName]='selectedSnippetName'
+    [snippetForm]='snippetForm'
+    (submitForm)='submitForm($event)'
+    (resetForm)='resetForm($event)'
+    ></api-snippets-details>
+  </div>
+</div>

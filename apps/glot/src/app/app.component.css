@@ -1,0 +1,10 @@
+mat-toolbar{
+  display:flex;
+  justify-content: space-between;
+}
+.title h1{
+  font-size: 48px;
+}
+.notice h2{
+  font-size:36px;
+}

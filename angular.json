@@ -149,6 +149,244 @@
           }
         }
       }
+    },
+    "pastebin": {
+      "root": "apps/pastebin/",
+      "sourceRoot": "apps/pastebin/src",
+      "projectType": "application",
+      "prefix": "api",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/pastebin",
+            "index": "apps/pastebin/src/index.html",
+            "main": "apps/pastebin/src/main.ts",
+            "polyfills": "apps/pastebin/src/polyfills.ts",
+            "tsConfig": "apps/pastebin/tsconfig.app.json",
+            "assets": [
+              "apps/pastebin/src/favicon.ico",
+              "apps/pastebin/src/assets"
+            ],
+            "styles": [
+              "apps/pastebin/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/pastebin/src/environments/environment.ts",
+                  "with": "apps/pastebin/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "pastebin:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "pastebin:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "pastebin:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/pastebin/src/test.ts",
+            "polyfills": "apps/pastebin/src/polyfills.ts",
+            "tsConfig": "apps/pastebin/tsconfig.spec.json",
+            "karmaConfig": "apps/pastebin/karma.conf.js",
+            "styles": [
+              "apps/pastebin/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "apps/pastebin/src/favicon.ico",
+              "apps/pastebin/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/pastebin/tsconfig.app.json",
+              "apps/pastebin/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "pastebin-e2e": {
+      "root": "apps/pastebin-e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/pastebin-e2e/protractor.conf.js",
+            "devServerTarget": "pastebin:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "pastebin:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/pastebin-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "glot": {
+      "root": "apps/glot/",
+      "sourceRoot": "apps/glot/src",
+      "projectType": "application",
+      "prefix": "api",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/glot",
+            "index": "apps/glot/src/index.html",
+            "main": "apps/glot/src/main.ts",
+            "polyfills": "apps/glot/src/polyfills.ts",
+            "tsConfig": "apps/glot/tsconfig.app.json",
+            "assets": [
+              "apps/glot/src/favicon.ico",
+              "apps/glot/src/assets"
+            ],
+            "styles": [
+              "apps/glot/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/glot/src/environments/environment.ts",
+                  "with": "apps/glot/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "glot:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "glot:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "glot:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/glot/src/test.ts",
+            "polyfills": "apps/glot/src/polyfills.ts",
+            "tsConfig": "apps/glot/tsconfig.spec.json",
+            "karmaConfig": "apps/glot/karma.conf.js",
+            "styles": [
+              "apps/glot/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "apps/glot/src/favicon.ico",
+              "apps/glot/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/glot/tsconfig.app.json",
+              "apps/glot/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "glot-e2e": {
+      "root": "apps/glot-e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/glot-e2e/protractor.conf.js",
+            "devServerTarget": "glot:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "glot:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/glot-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {

@@ -1,0 +1,19 @@
+mat-card {
+  padding:0;
+}
+
+.container {
+  display:grid;
+  grid-template-columns: 33% 33% 33%;
+  width:100%;
+  justify-content: space-between;
+}
+
+.delete {
+  justify-self: end;
+  align-self:center;
+}
+
+button:hover {
+  background:#f443365d;
+}
