@@ -1,0 +1,17 @@
+<div class='container'>
+  <api-fruits-view
+  [allFruits]='allFruits'
+  (selectFruit)='selectFruit($event)'
+  (deleteFruit)='deleteFruit($event)'
+  >
+
+  </api-fruits-view>
+  <api-fruits-details
+  [fruitForm]='fruitForm'
+  [selectedFruitName]='selectedFruitName'
+  (submitFruitForm)='submitFruitForm()'
+  (cancelFruitForm)='cancelFruitForm()'
+  >
+
+  </api-fruits-details>
+</div>

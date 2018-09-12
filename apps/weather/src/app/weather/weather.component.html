@@ -1,0 +1,25 @@
+<div class='container'>
+  <div>
+    <api-weather-view
+    [statesLoading]='statesLoading'
+    [citiesLoading]='citiesLoading'
+    [countries]='countries'
+    [states]='states'
+    [cities]='cities'
+    (getLocation)='getLocation($event)'
+    (selectCountry)='getStates($event)'
+    (selectState)='getCities($event)'
+    (getWeather)='getWeather($event)'
+    >
+
+    </api-weather-view>
+  </div>
+  <div>
+    <api-weather-details
+    [weather]='weather'
+    (updateWeather)='updateWeather($event)'
+    >
+
+    </api-weather-details>
+  </div>
+</div>

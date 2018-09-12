@@ -1,0 +1,26 @@
+<mat-card>
+    <mat-card-title>
+      <h1 *ngIf='!weather'>Current Weather</h1>
+      <div class='header'>
+        <div *ngIf='weather'><img src='https://www.airvisual.com/images/{{weather?.current?.weather?.ic}}.png'></div>
+        <div *ngIf='weather'>
+          <h2>{{weather?.city}}</h2>
+          <h3>{{weather?.state}}, {{weather?.country}}</h3>
+        </div>
+      </div>
+    </mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content *ngIf='weather'>
+      <form #form='ngForm' (ngSubmit)='submitForm(temp.value, humidity.value)'>
+        <mat-form-field appearance="outline">
+          <mat-label>Temperature | F</mat-label>
+          <input matInput #temp placeholder='Temp' [value]='weather?.current?.weather?.tp | temperature'>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Humidity | %</mat-label>
+            <input matInput #humidity placeholder='Temp' [value]='weather?.current?.weather?.hu'>
+        </mat-form-field>
+        <button mat-raised-button type='submit' color='primary'>SUBMIT</button>
+      </form>
+    </mat-card-content>
+</mat-card>

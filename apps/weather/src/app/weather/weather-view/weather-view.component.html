@@ -1,0 +1,45 @@
+<mat-card>
+  <mat-card-title>
+    <h1>Choose Location</h1>
+  </mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <button mat-raised-button color='primary' id='locate' (click)='submitGetLocation()'><mat-icon>location_on</mat-icon>Find Me</button>
+    <mat-divider></mat-divider>
+    <div class='select'>
+
+      <mat-form-field>
+        <mat-select #country placeholder="Country" (selectionChange)='submitSelectedCountry($event.value)'>
+          <mat-option *ngFor='let country of countries' [value]='country.country'>{{country.country}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div>
+        <div [hidden]='!states'>
+          <mat-form-field>
+            <mat-select #state placeholder="State" (selectionChange)='submitSelectedState($event.value, country.value)'>
+              <mat-option *ngFor='let state of states' [value]='state.state'>{{state.state}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div id='spinner' *ngIf='statesLoading'>
+          <mat-spinner [diameter]='40'></mat-spinner>
+        </div>
+      </div>
+
+      <div>
+        <div [hidden]='!cities'>
+          <mat-form-field>
+            <mat-select placeholder="City" (selectionChange)='submitGetWeather($event.value, state.value, country.value)'>
+              <mat-option *ngFor='let city of cities' [value]='city.city'>{{city.city}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div id='spinner' *ngIf='citiesLoading'>
+            <mat-spinner [diameter]='40'></mat-spinner>
+        </div>
+      </div>
+
+    </div>
+  </mat-card-content>
+</mat-card>

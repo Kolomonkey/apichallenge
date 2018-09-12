@@ -28,6 +28,24 @@
     },
     "glot-e2e": {
       "tags": []
+    },
+    "template": {
+      "tags": []
+    },
+    "template-e2e": {
+      "tags": []
+    },
+    "weather": {
+      "tags": []
+    },
+    "weather-e2e": {
+      "tags": []
+    },
+    "fruit": {
+      "tags": []
+    },
+    "fruit-e2e": {
+      "tags": []
     }
   }
 }

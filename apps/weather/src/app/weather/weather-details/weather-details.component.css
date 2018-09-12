@@ -1,0 +1,26 @@
+h2 {
+  margin-bottom:0;
+  padding-bottom:0;
+}
+h3 {
+  margin-top:0;
+  padding-top:0;
+}
+img {
+  width:150px;
+}
+.header {
+  display:grid;
+  grid-template-columns: 40% 30%;
+  justify-content: space-around;
+}
+mat-form-field {
+  width:100%;
+}
+input {
+  font-size: 28px;
+  font-weight:bold;
+}
+mat-card-content {
+  padding-top:20px;
+}

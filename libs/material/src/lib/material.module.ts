@@ -14,7 +14,9 @@ import {
   MatExpansionModule,
   MatProgressBarModule,
   MatGridListModule,
-  MatFormFieldModule
+  MatFormFieldModule,
+  MatSelectModule,
+  MatProgressSpinnerModule
 } from '@angular/material';
 import { PastesComponent } from './pastes/pastes.component';
 
@@ -34,7 +36,9 @@ import { PastesComponent } from './pastes/pastes.component';
     MatExpansionModule,
     MatProgressBarModule,
     MatGridListModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatSelectModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     MatButtonModule,
@@ -50,7 +54,9 @@ import { PastesComponent } from './pastes/pastes.component';
     MatExpansionModule,
     MatProgressBarModule,
     MatGridListModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatSelectModule,
+    MatProgressSpinnerModule
   ],
   declarations: [PastesComponent]
 })
