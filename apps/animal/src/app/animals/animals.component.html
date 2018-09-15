@@ -1,0 +1,21 @@
+<div class='container'>
+
+  <api-animals-view
+  [animals$]='animals$ | async'
+  (selectAnimal)='selectAnimal($event.id)'
+  (selectAnimal)='patchAnimalForm($event)'
+  (deleteAnimal)='deleteAnimal($event)'
+  >
+
+  </api-animals-view>
+
+  <api-animals-details
+  [currentAnimal$]='currentAnimal$ | async'
+  [animalForm]='animalForm'
+  (submitAnimalForm)='submitAnimalForm($event)'
+  (resetSelectedAnimal)='selectAnimal($event)'
+  >
+
+  </api-animals-details>
+
+</div>

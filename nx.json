@@ -46,6 +46,27 @@
     },
     "fruit-e2e": {
       "tags": []
+    },
+    "todo": {
+      "tags": []
+    },
+    "todo-e2e": {
+      "tags": []
+    },
+    "common-data": {
+      "tags": []
+    },
+    "animal": {
+      "tags": []
+    },
+    "animal-e2e": {
+      "tags": []
+    },
+    "taco": {
+      "tags": []
+    },
+    "taco-e2e": {
+      "tags": []
     }
   }
 }

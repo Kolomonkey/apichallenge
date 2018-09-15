@@ -1,0 +1,19 @@
+<div class='container'>
+
+  <api-todos-view
+  [allTodos]='todos$ | async'
+  (selectTodo)='selectTodo($event)'
+  (selectTodo)='patchForm($event)'
+  (deleteTodo)='deleteTodo($event)'
+  >
+
+  </api-todos-view>
+
+  <api-todos-details
+  [todoForm]='todoForm'
+  (submitTodoForm)='submitTodoForm($event)'
+  >
+
+  </api-todos-details>
+
+</div>

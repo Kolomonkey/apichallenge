@@ -1,0 +1,35 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+    <h1 *ngIf='!currentAnimal$?.name else animalName'>Add a Animal!</h1>
+    <ng-template #animalName><h1>{{currentAnimal$?.name}}</h1></ng-template>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+      <form [formGroup]="animalForm" #form='ngForm' (submit)='submitSubmitAnimalForm(animalForm.value); resetAnimal(form)'>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput required formControlName="name" placeholder='Name'>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+              <mat-label>Height</mat-label>
+              <input matInput required formControlName="height" placeholder='Height'>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+              <mat-label>Mass</mat-label>
+              <input matInput required type='number' formControlName="mass" placeholder='Mass'>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+              <mat-label>Continent</mat-label>
+              <input matInput required formControlName="continent" placeholder='Continent'>
+          </mat-form-field>
+          <button mat-raised-button color='primary' type='submit'>SUBMIT</button>
+          <button mat-raised-button color='warn' type='reset' (click)='resetAnimal(form)'>CANCEL</button>
+        </form>
+  </mat-card-content>
+</mat-card>

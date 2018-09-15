@@ -18,6 +18,9 @@
     "paths": {
       "@api/material": [
         "libs/material/src/index.ts"
+      ],
+      "@api/common-data": [
+        "libs/common-data/src/index.ts"
       ]
     }
   },

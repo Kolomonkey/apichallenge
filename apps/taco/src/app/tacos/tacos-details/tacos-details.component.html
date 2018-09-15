@@ -1,0 +1,35 @@
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <h1 *ngIf='!currentTaco$?.name else tacoName'>Create a Taco!</h1>
+        <ng-template #tacoName><h1>{{currentTaco$?.name}}</h1></ng-template>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <form [formGroup]="tacoForm" #form='ngForm' (submit)='submitSubmitTacoForm(form.value); resetTacoForm(form)'>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput required formControlName="name" placeholder='Name'>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Calories</mat-label>
+            <input matInput required type='number' formControlName="calories" placeholder='Calories'>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Protein</mat-label>
+            <input matInput required formControlName="protein" placeholder='Protein'>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Salsa</mat-label>
+            <input matInput required formControlName="salsa" placeholder='Salsa'>
+        </mat-form-field>
+        <button mat-raised-button color='primary' type='submit'>SUBMIT</button>
+        <button mat-raised-button color='warn' type='reset' (click)='resetTacoForm(form)'>CANCEL</button>
+      </form>
+    </mat-card-content>
+  </mat-card>

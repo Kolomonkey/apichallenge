@@ -14,7 +14,6 @@ mat-card-title {
   width:100%;
   justify-content: space-between;
 }
-
 .delete {
   justify-self: end;
   align-self:center;

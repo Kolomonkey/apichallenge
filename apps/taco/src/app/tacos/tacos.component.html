@@ -1,0 +1,21 @@
+<div class='container'>
+
+    <api-tacos-view
+    [tacos$]='tacos$ | async'
+    (selectTaco)='selectTaco($event)'
+    (selectTaco)='patchTacoForm($event)'
+    (deleteTaco)='deleteTaco($event)'
+    >
+
+    </api-tacos-view>
+
+    <api-tacos-details
+    [currentTaco$]='currentTaco$ | async'
+    [tacoForm]='tacoForm'
+    (submitTacoForm)='submitTacoForm($event)'
+    (resetCurrentTaco)='resetCurrentTaco()'
+    >
+
+    </api-tacos-details>
+
+</div>
