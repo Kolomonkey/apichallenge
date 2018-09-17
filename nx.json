@@ -67,6 +67,18 @@
     },
     "taco-e2e": {
       "tags": []
+    },
+    "pizza": {
+      "tags": []
+    },
+    "pizza-e2e": {
+      "tags": []
+    },
+    "rick-morty": {
+      "tags": []
+    },
+    "rick-morty-e2e": {
+      "tags": []
     }
   }
 }

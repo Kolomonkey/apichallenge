@@ -6,18 +6,67 @@ import {
 import * as fromTodos from './todo/todo.reducer';
 import * as fromAnimals from './animal/animal.reducer';
 import * as fromTacos from './taco/taco.reducer';
+import * as fromPizzas from './pizza/pizza.reducer';
 
 export interface AppState {
   todos: fromTodos.TodosState;
   animals: fromAnimals.AnimalState;
   tacos: fromTacos.TacoState;
+  pizzas: fromPizzas.PizzaState
 }
 
 export const reducers: ActionReducerMap<AppState> = {
   todos: fromTodos.todosReducer,
   animals: fromAnimals.animalReducer,
-  tacos: fromTacos.tacoReducer
+  tacos: fromTacos.tacoReducer,
+  pizzas: fromPizzas.pizzaReducer
 };
+
+//PIZZA SELECTORS
+
+export const selectPizzaPizzasState = createFeatureSelector<fromPizzas.PizzaState>(
+  'pizzas'
+);
+
+export const selectPizzaIds = createSelector(
+  selectPizzaPizzasState,
+  fromPizzas.selectPizzaIds
+)
+
+export const selectPizzaEntities = createSelector(
+  selectPizzaPizzasState,
+  fromPizzas.selectPizzaEntities
+)
+
+export const selectAllPizzas = createSelector(
+  selectPizzaPizzasState,
+  fromPizzas.selectAllPizzas
+)
+
+export const selectPizzaTotal = createSelector(
+  selectPizzaPizzasState,
+  fromPizzas.selectPizzaTotal
+)
+
+export const selectCurrentPizzaId = createSelector(
+  selectPizzaPizzasState,
+  fromPizzas.getSelectedPizzaId
+)
+
+export const selectCurrentPizza = createSelector(
+  selectPizzaEntities,
+  selectCurrentPizzaId,
+  (pizzaEntities, pizzaId) => {
+    const emptyPizza = {
+      id: null,
+      name: '',
+      calories: null,
+      mainTopping: '',
+      secondaryTopping: ''
+    };
+    return pizzaId ? pizzaEntities[pizzaId] : emptyPizza;
+  }
+)
 
 //TACO SELECTORS
 

@@ -19,7 +19,6 @@ import {
   MatProgressSpinnerModule,
   MatRadioModule
 } from '@angular/material';
-import { PastesComponent } from './pastes/pastes.component';
 
 @NgModule({
   imports: [
@@ -60,7 +59,6 @@ import { PastesComponent } from './pastes/pastes.component';
     MatSelectModule,
     MatProgressSpinnerModule,
     MatRadioModule
-  ],
-  declarations: [PastesComponent]
+  ]
 })
 export class MaterialModule {}

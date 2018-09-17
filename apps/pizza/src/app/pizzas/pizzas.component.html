@@ -1,0 +1,21 @@
+<div class='container'>
+
+    <api-pizzas-view
+    [pizzas$]='pizzas$ | async'
+    (selectPizza)='selectPizza($event)'
+    (selectPizza)='patchPizzaForm($event)'
+    (deletePizza)='deletePizza($event)'
+    >
+
+    </api-pizzas-view>
+
+    <api-pizzas-details
+    [currentPizza$]='currentPizza$ | async'
+    [pizzaForm]='pizzaForm'
+    (submitPizzaForm)='submitPizzaForm($event)'
+    (resetCurrentPizza)='resetCurrentPizza()'
+    >
+
+    </api-pizzas-details>
+
+</div>

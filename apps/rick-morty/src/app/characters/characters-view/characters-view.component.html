@@ -1,0 +1,22 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>Characters!</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item
+      class='mat-list-option'
+      *ngFor='let character of allCharacters'
+      (click)='submitSelectCharacter(character.id)'
+      >
+      <div class='container'>
+        <h3>{{character.name}}</h3>
+        <div class='delete'><button mat-icon-button color='warn' (click)='submitDeleteCharacter(character); $event.stopImmediatePropagation()'><mat-icon matListIcon>delete</mat-icon></button></div>
+      </div>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

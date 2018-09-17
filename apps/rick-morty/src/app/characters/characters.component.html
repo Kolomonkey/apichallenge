@@ -1,0 +1,20 @@
+<div class='container'>
+
+  <api-characters-view
+  [allCharacters]='allCharacters'
+  (selectCharacter)='selectCharacter($event)'
+  (deleteCharacter)='deleteCharacter($event)'
+  >
+
+  </api-characters-view>
+
+  <api-characters-details
+  [selectedCharacter]='selectedCharacter'
+  [characterForm]='characterForm'
+  (submitCharacterForm)='submitCharacterForm($event)'
+  (resetSelectedCharacter)='resetSelectedCharacter()'
+  >
+
+  </api-characters-details>
+
+</div>

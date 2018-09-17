@@ -1129,6 +1129,244 @@
           }
         }
       }
+    },
+    "pizza": {
+      "root": "apps/pizza/",
+      "sourceRoot": "apps/pizza/src",
+      "projectType": "application",
+      "prefix": "api",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/pizza",
+            "index": "apps/pizza/src/index.html",
+            "main": "apps/pizza/src/main.ts",
+            "polyfills": "apps/pizza/src/polyfills.ts",
+            "tsConfig": "apps/pizza/tsconfig.app.json",
+            "assets": [
+              "apps/pizza/src/favicon.ico",
+              "apps/pizza/src/assets"
+            ],
+            "styles": [
+              "apps/pizza/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/pizza/src/environments/environment.ts",
+                  "with": "apps/pizza/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "pizza:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "pizza:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "pizza:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/pizza/src/test.ts",
+            "polyfills": "apps/pizza/src/polyfills.ts",
+            "tsConfig": "apps/pizza/tsconfig.spec.json",
+            "karmaConfig": "apps/pizza/karma.conf.js",
+            "styles": [
+              "apps/pizza/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "apps/pizza/src/favicon.ico",
+              "apps/pizza/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/pizza/tsconfig.app.json",
+              "apps/pizza/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "pizza-e2e": {
+      "root": "apps/pizza-e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/pizza-e2e/protractor.conf.js",
+            "devServerTarget": "pizza:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "pizza:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/pizza-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "rick-morty": {
+      "root": "apps/rick-morty/",
+      "sourceRoot": "apps/rick-morty/src",
+      "projectType": "application",
+      "prefix": "api",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/rick-morty",
+            "index": "apps/rick-morty/src/index.html",
+            "main": "apps/rick-morty/src/main.ts",
+            "polyfills": "apps/rick-morty/src/polyfills.ts",
+            "tsConfig": "apps/rick-morty/tsconfig.app.json",
+            "assets": [
+              "apps/rick-morty/src/favicon.ico",
+              "apps/rick-morty/src/assets"
+            ],
+            "styles": [
+              "apps/rick-morty/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/rick-morty/src/environments/environment.ts",
+                  "with": "apps/rick-morty/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "rick-morty:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "rick-morty:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "rick-morty:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/rick-morty/src/test.ts",
+            "polyfills": "apps/rick-morty/src/polyfills.ts",
+            "tsConfig": "apps/rick-morty/tsconfig.spec.json",
+            "karmaConfig": "apps/rick-morty/karma.conf.js",
+            "styles": [
+              "apps/rick-morty/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "apps/rick-morty/src/favicon.ico",
+              "apps/rick-morty/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/rick-morty/tsconfig.app.json",
+              "apps/rick-morty/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "rick-morty-e2e": {
+      "root": "apps/rick-morty-e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/rick-morty-e2e/protractor.conf.js",
+            "devServerTarget": "rick-morty:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "rick-morty:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/rick-morty-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {

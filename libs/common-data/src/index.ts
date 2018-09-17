@@ -11,3 +11,7 @@ export { AnimalsFacade } from './lib/state/animal/animal.facade';
 export { Taco } from './lib/core/taco.model';
 export { TacoService } from './lib/core/taco.service';
 export { TacoFacade } from './lib/state/taco/taco.facade';
+
+export { Pizza } from './lib/core/pizza.model';
+export { PizzaService } from './lib/core/pizza.service';
+export { PizzaFacade } from './lib/state/pizza/pizza.facade';
