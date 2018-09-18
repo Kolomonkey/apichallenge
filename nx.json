@@ -79,6 +79,12 @@
     },
     "rick-morty-e2e": {
       "tags": []
+    },
+    "drink": {
+      "tags": []
+    },
+    "drink-e2e": {
+      "tags": []
     }
   }
 }

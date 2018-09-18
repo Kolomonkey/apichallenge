@@ -1367,6 +1367,125 @@
           }
         }
       }
+    },
+    "drink": {
+      "root": "apps/drink/",
+      "sourceRoot": "apps/drink/src",
+      "projectType": "application",
+      "prefix": "api",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/drink",
+            "index": "apps/drink/src/index.html",
+            "main": "apps/drink/src/main.ts",
+            "polyfills": "apps/drink/src/polyfills.ts",
+            "tsConfig": "apps/drink/tsconfig.app.json",
+            "assets": [
+              "apps/drink/src/favicon.ico",
+              "apps/drink/src/assets"
+            ],
+            "styles": [
+              "apps/drink/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/drink/src/environments/environment.ts",
+                  "with": "apps/drink/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "drink:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "drink:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "drink:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/drink/src/test.ts",
+            "polyfills": "apps/drink/src/polyfills.ts",
+            "tsConfig": "apps/drink/tsconfig.spec.json",
+            "karmaConfig": "apps/drink/karma.conf.js",
+            "styles": [
+              "apps/drink/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "apps/drink/src/favicon.ico",
+              "apps/drink/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/drink/tsconfig.app.json",
+              "apps/drink/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "drink-e2e": {
+      "root": "apps/drink-e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/drink-e2e/protractor.conf.js",
+            "devServerTarget": "drink:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "drink:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/drink-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {

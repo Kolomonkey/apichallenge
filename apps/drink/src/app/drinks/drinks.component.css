@@ -1,0 +1,9 @@
+.container {
+  display:grid;
+  align-items:center;
+  grid-template-columns: 35% 35%;
+  justify-content: center;
+  grid-column-gap: 5%;
+  grid-row-gap: 2.5%;
+  height:calc(100vh - 64px);
+}

@@ -1,0 +1,35 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1 *ngIf='!currentDrink$?.name else drinkName'>Create a Drink!</h1>
+      <ng-template #drinkName><h1>{{currentDrink$?.name}}</h1></ng-template>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <form [formGroup]="drinkForm" #form='ngForm' (submit)='submitSubmitDrinkForm(form.value); resetDrinkForm(form)'>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput required formControlName="name" placeholder='Name'>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+          <mat-label>Caffeine</mat-label>
+          <input matInput required type='number' formControlName="caffeine" placeholder='Caffeine'>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+          <mat-label>Sugar</mat-label>
+          <input matInput required type='number' formControlName="sugar" placeholder='Sugar'>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+          <mat-label>Founder</mat-label>
+          <input matInput required formControlName="founder" placeholder='Founder'>
+      </mat-form-field>
+      <button mat-raised-button color='primary' type='submit'>SUBMIT</button>
+      <button mat-raised-button color='warn' type='reset' (click)='resetDrinkForm(form)'>CANCEL</button>
+    </form>
+  </mat-card-content>
+</mat-card>

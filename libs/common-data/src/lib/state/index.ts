@@ -7,20 +7,70 @@ import * as fromTodos from './todo/todo.reducer';
 import * as fromAnimals from './animal/animal.reducer';
 import * as fromTacos from './taco/taco.reducer';
 import * as fromPizzas from './pizza/pizza.reducer';
+import * as fromDrinks from './drink/drink.reducer';
 
 export interface AppState {
   todos: fromTodos.TodosState;
   animals: fromAnimals.AnimalState;
   tacos: fromTacos.TacoState;
-  pizzas: fromPizzas.PizzaState
+  pizzas: fromPizzas.PizzaState,
+  drinks: fromDrinks.DrinkState
 }
 
 export const reducers: ActionReducerMap<AppState> = {
   todos: fromTodos.todosReducer,
   animals: fromAnimals.animalReducer,
   tacos: fromTacos.tacoReducer,
-  pizzas: fromPizzas.pizzaReducer
+  pizzas: fromPizzas.pizzaReducer,
+  drinks: fromDrinks.drinkReducer
 };
+
+//DRINK SELECTORS
+
+export const selectDrinkDrinksState = createFeatureSelector<fromDrinks.DrinkState>(
+  'drinks'
+);
+
+export const selectDrinkIds = createSelector(
+  selectDrinkDrinksState,
+  fromDrinks.selectDrinkIds
+)
+
+export const selectDrinkEntities = createSelector(
+  selectDrinkDrinksState,
+  fromDrinks.selectDrinkEntities
+)
+
+export const selectAllDrinks = createSelector(
+  selectDrinkDrinksState,
+  fromDrinks.selectAllDrinks
+);
+
+export const selectDrinkTotal = createSelector(
+  selectDrinkDrinksState,
+  fromDrinks.selectDrinkTotal
+)
+
+export const selectCurrentDrinkId = createSelector(
+  selectDrinkDrinksState,
+  fromDrinks.getSelectedDrinkId
+)
+
+export const selectCurrentDrink = createSelector(
+  selectDrinkEntities,
+  selectCurrentDrinkId,
+  (drinkEntities, drinkId) => {
+    const emptyDrink = {
+      id: null,
+      name: '',
+      caffeine: null,
+      sugar: null,
+      founder: ''
+    };
+    return drinkId ? drinkEntities[drinkId] : emptyDrink;
+  }
+)
+
 
 //PIZZA SELECTORS
 

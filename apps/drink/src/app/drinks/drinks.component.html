@@ -1,0 +1,21 @@
+<div class='container'>
+
+  <api-drinks-view
+  [drinks$]='drinks$ | async'
+  (selectDrink)='selectDrink($event)'
+  (selectDrink)='patchDrinkForm($event)'
+  (deleteDrink)='deleteDrink($event)'
+  >
+
+  </api-drinks-view>
+
+  <api-drinks-details
+  [currentDrink$]='currentDrink$ | async'
+  [drinkForm]='drinkForm'
+  (submitDrinkForm)='submitDrinkForm($event)'
+  (resetCurrentDrink)='resetCurrentDrink()'
+  >
+
+  </api-drinks-details>
+
+</div>

@@ -11,13 +11,15 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AnimalsFacade } from './animal/animal.facade';
 import { PizzaFacade } from './pizza/pizza.facade';
 import { PizzaEffects } from './pizza/pizza.effects';
+import { DrinkFacade } from './drink/drink.facade';
+import { DrinkEffects } from './drink/drink.effects';
 
 @NgModule({
   imports: [
     StoreModule.forRoot(reducers),
-    EffectsModule.forRoot([TodosEffects, AnimalEffects, TacoEffects, PizzaEffects]),
+    EffectsModule.forRoot([TodosEffects, AnimalEffects, TacoEffects, PizzaEffects, DrinkEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25 })
   ],
-  providers: [TodosFacade, AnimalsFacade, TacoFacade, PizzaFacade]
+  providers: [TodosFacade, AnimalsFacade, TacoFacade, PizzaFacade, DrinkFacade]
 })
 export class StateModule {}

@@ -6,9 +6,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { StateModule } from './state/state.module';
 import { TacoService } from './core/taco.service';
 import { PizzaService } from './core/pizza.service';
+import { DrinkService } from './core/drink.service';
 @NgModule({
   imports: [CommonModule, HttpClientModule, StateModule],
   exports: [StateModule, HttpClientModule],
-  providers: [TodoService, AnimalService, TacoService, PizzaService]
+  providers: [TodoService, AnimalService, TacoService, PizzaService, DrinkService]
 })
 export class CommonDataModule {}
