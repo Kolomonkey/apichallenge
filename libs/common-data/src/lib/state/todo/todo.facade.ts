@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
-import { ActionsSubject, select, Store } from '@ngrx/store';
-import { filter } from 'rxjs/operators';
+import { select, Store } from '@ngrx/store';
 
 import { selectAllTodos, selectCurrectTodo } from '..';
-import { TodosActionTypes } from './todo.actions';
 import * as TodosAction from './todo.actions';
 import { TodosState } from './todo.reducer';
 

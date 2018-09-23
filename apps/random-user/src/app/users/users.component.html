@@ -1,0 +1,20 @@
+<div class='container'>
+
+  <api-users-view
+  [allUsers]='allUsers'
+  (selectUser)='selectUser($event)'
+  (deleteUser)='deleteUser($event)'
+  >
+
+  </api-users-view>
+
+  <api-users-details
+  [selectedUser]='selectedUser'
+  [userForm]='userForm'
+  (submitUserForm)='submitUserForm($event)'
+  (resetSelectedUser)='resetSelectedUser()'
+  >
+
+  </api-users-details>
+
+</div>

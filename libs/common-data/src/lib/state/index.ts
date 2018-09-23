@@ -8,13 +8,17 @@ import * as fromAnimals from './animal/animal.reducer';
 import * as fromTacos from './taco/taco.reducer';
 import * as fromPizzas from './pizza/pizza.reducer';
 import * as fromDrinks from './drink/drink.reducer';
+import * as fromPlayers from './player/player.reducer';
+import * as fromInstruments from './instrument/instrument.reducer';
 
 export interface AppState {
   todos: fromTodos.TodosState;
   animals: fromAnimals.AnimalState;
   tacos: fromTacos.TacoState;
   pizzas: fromPizzas.PizzaState,
-  drinks: fromDrinks.DrinkState
+  drinks: fromDrinks.DrinkState,
+  players: fromPlayers.PlayerState;
+  instruments: fromInstruments.InstrumentState;
 }
 
 export const reducers: ActionReducerMap<AppState> = {
@@ -22,8 +26,103 @@ export const reducers: ActionReducerMap<AppState> = {
   animals: fromAnimals.animalReducer,
   tacos: fromTacos.tacoReducer,
   pizzas: fromPizzas.pizzaReducer,
-  drinks: fromDrinks.drinkReducer
+  drinks: fromDrinks.drinkReducer,
+  players: fromPlayers.playerReducer,
+  instruments: fromInstruments.instrumentReducer
 };
+
+//INSTRUMENT SELECTORS
+
+export const selectInstrumentInstrumentsState = createFeatureSelector<fromInstruments.InstrumentState>(
+  'instruments'
+);
+
+export const selectInstrumentIds = createSelector(
+  selectInstrumentInstrumentsState,
+  fromInstruments.selectInstrumentIds
+);
+
+export const selectInstrumentEntities = createSelector(
+  selectInstrumentInstrumentsState,
+  fromInstruments.selectInstrumentEntities
+);
+
+export const selectAllInstruments = createSelector(
+  selectInstrumentInstrumentsState,
+  fromInstruments.selectAllInstruments
+);
+
+export const selectInstrumentTotal = createSelector(
+  selectInstrumentInstrumentsState,
+  fromInstruments.selectInstrumentTotal
+);
+
+export const selectCurrentInstrumentId = createSelector(
+  selectInstrumentInstrumentsState,
+  fromInstruments.getSelectedInstrumentId
+)
+
+export const selectCurrentInstrument = createSelector(
+  selectInstrumentEntities,
+  selectCurrentInstrumentId,
+  (instrumentEntities, instrumentId) => {
+    const emptyInstrument = {
+      id: null,
+      name: '',
+      year: '',
+      inventor: '',
+      country: ''
+    };
+    return instrumentId ? instrumentEntities[instrumentId] : emptyInstrument;
+  }
+)
+
+//PLAYER SELECTORS
+
+export const selectPlayerPlayersState = createFeatureSelector<fromPlayers.PlayerState>(
+  'players'
+);
+
+export const selectPlayerIds = createSelector(
+  selectPlayerPlayersState,
+  fromPlayers.selectPlayerIds
+);
+
+export const selectPlayerEntities = createSelector(
+  selectPlayerPlayersState,
+  fromPlayers.selectPlayerEntities
+);
+
+export const selectAllPlayers = createSelector(
+  selectPlayerPlayersState,
+  fromPlayers.selectAllPlayers
+);
+
+export const selectPlayerTotal = createSelector(
+  selectPlayerPlayersState,
+  fromPlayers.selectPlayerTotal
+);
+
+export const selectCurrentPlayerId = createSelector(
+  selectPlayerPlayersState,
+  fromPlayers.getSelectedPlayerId
+)
+
+export const selectCurrentPlayer = createSelector(
+  selectPlayerEntities,
+  selectCurrentPlayerId,
+  (playerEntities, playerId) => {
+    const emptyPlayer = {
+      id: null,
+      name: '',
+      height: '',
+      position: '',
+      number: null,
+      team: ''
+    };
+    return playerId ? playerEntities[playerId] : emptyPlayer;
+  }
+)
 
 //DRINK SELECTORS
 

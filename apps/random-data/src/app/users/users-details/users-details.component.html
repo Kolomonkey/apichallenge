@@ -1,0 +1,36 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1 *ngIf='!selectedUser?.name else userName'>Create A User!</h1>
+      <ng-template #userName><h1>{{selectedUser?.name}}</h1></ng-template>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <form [formGroup]="userForm" #form='ngForm' (submit)='submitSubmitUserForm(form.value); resetUserForm(form)'>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput required formControlName="name" placeholder='Name'>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput required formControlName="email" placeholder='Email'>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+          <mat-label>Gender</mat-label>
+          <input matInput required formControlName="gender" placeholder='Gender'>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Company</mat-label>
+        <input matInput required formControlName="company" placeholder='Company'>
+      </mat-form-field>
+
+      <button mat-raised-button color='primary' type='submit'>SUBMIT</button>
+      <button mat-raised-button color='warn' type='reset' (click)='resetUserForm(form)'>CANCEL</button>
+    </form>
+  </mat-card-content>
+</mat-card>

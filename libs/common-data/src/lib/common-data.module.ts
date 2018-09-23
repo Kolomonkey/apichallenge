@@ -7,9 +7,11 @@ import { StateModule } from './state/state.module';
 import { TacoService } from './core/taco.service';
 import { PizzaService } from './core/pizza.service';
 import { DrinkService } from './core/drink.service';
+import { PlayerService } from './core/player.service';
+import { InstrumentService } from './core/instrument.service';
 @NgModule({
   imports: [CommonModule, HttpClientModule, StateModule],
   exports: [StateModule, HttpClientModule],
-  providers: [TodoService, AnimalService, TacoService, PizzaService, DrinkService]
+  providers: [TodoService, AnimalService, TacoService, PizzaService, DrinkService, PlayerService, InstrumentService]
 })
 export class CommonDataModule {}

@@ -1,0 +1,21 @@
+<div class='container'>
+
+  <api-players-view
+  [players$]='players$ | async'
+  (selectPlayer)='selectPlayer($event)'
+  (selectPlayer)='patchPlayerForm($event)'
+  (deletePlayer)='deletePlayer($event)'
+  >
+
+  </api-players-view>
+
+  <api-players-details
+  [currentPlayer$]='currentPlayer$ | async'
+  [playerForm]='playerForm'
+  (submitPlayerForm)='submitPlayerForm($event)'
+  (resetPlayer)='resetPlayer()'
+  >
+
+  </api-players-details>
+
+</div>

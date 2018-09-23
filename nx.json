@@ -85,6 +85,30 @@
     },
     "drink-e2e": {
       "tags": []
+    },
+    "random-user": {
+      "tags": []
+    },
+    "random-user-e2e": {
+      "tags": []
+    },
+    "random-data": {
+      "tags": []
+    },
+    "random-data-e2e": {
+      "tags": []
+    },
+    "player": {
+      "tags": []
+    },
+    "player-e2e": {
+      "tags": []
+    },
+    "instrument": {
+      "tags": []
+    },
+    "instrument-e2e": {
+      "tags": []
     }
   }
 }

@@ -1,0 +1,21 @@
+<div class='container'>
+
+  <api-instruments-view
+  [instruments$]='instruments$ | async'
+  (selectInstrument)='selectInstrument($event.id)'
+  (selectInstrument)='patchInstrumentForm($event)'
+  (deleteInstrument)='deleteInstrument($event)'
+  >
+
+  </api-instruments-view>
+
+  <api-instruments-details
+  [currentInstrument$]='currentInstrument$ | async'
+  [instrumentForm]='instrumentForm'
+  (submitInstrumentForm)='submitInstrumentForm($event)'
+  (resetInstrument)='resetInstrument()'
+  >
+
+  </api-instruments-details>
+
+</div>

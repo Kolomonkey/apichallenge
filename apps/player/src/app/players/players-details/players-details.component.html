@@ -1,0 +1,41 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1 *ngIf='!currentPlayer$?.name else playerName'>Create A Player!</h1>
+      <ng-template #playerName><h1>{{currentPlayer$?.name}}</h1></ng-template>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <form [formGroup]='playerForm' #form='ngForm' (ngSubmit)='submitSubmitPlayerForm(form.value); resetPlayerForm(form)'>
+      <mat-form-field appearance='outline'>
+        <mat-label>Name</mat-label>
+        <input matInput formControlName='name' placeholder='Name'>
+      </mat-form-field>
+
+      <mat-form-field appearance='outline'>
+        <mat-label>Height</mat-label>
+        <input matInput formControlName='height' placeholder='Height'>
+      </mat-form-field>
+
+      <mat-form-field appearance='outline'>
+        <mat-label>Position</mat-label>
+        <input matInput formControlName='position' placeholder='Position'>
+      </mat-form-field>
+
+      <mat-form-field appearance='outline'>
+        <mat-label>Number</mat-label>
+        <input matInput formControlName='number' placeholder='Number'>
+      </mat-form-field>
+
+      <mat-form-field appearance='outline'>
+        <mat-label>Team</mat-label>
+        <input matInput formControlName='team' placeholder='Team'>
+      </mat-form-field>
+
+      <button mat-raised-button color='primary' type='submit' [disabled]='!form.valid'>SUBMIT</button>
+      <button mat-raised-button color='warn' type='reset' (click)='resetPlayerForm(form)'>CANCEL</button>
+
+    </form>
+  </mat-card-content>
+</mat-card>

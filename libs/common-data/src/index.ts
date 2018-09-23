@@ -19,3 +19,11 @@ export { PizzaFacade } from './lib/state/pizza/pizza.facade';
 export { Drink } from './lib/core/drink.model';
 export { DrinkService } from './lib/core/drink.service';
 export { DrinkFacade } from './lib/state/drink/drink.facade';
+
+export { Player } from './lib/core/player.model';
+export { PlayerService } from './lib/core/player.service';
+export { PlayerFacade } from './lib/state/player/player.facade';
+
+export { Instrument } from './lib/core/instrument.model';
+export { InstrumentService } from './lib/core/instrument.service';
+export { InstrumentFacade } from './lib/state/instrument/instrument.facade';
