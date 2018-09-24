@@ -3,6 +3,13 @@ import { HttpClient } from '@angular/common/http';
 
 const BASE_URL = 'https://level-up-api-mefqhdpvub.now.sh/instruments';
 
+const test = {
+  id: 1,
+  name: 'Seattle',
+  population: 12345,
+  state: 'Washington'
+}
+
 @Injectable({
   providedIn: 'root'
 })

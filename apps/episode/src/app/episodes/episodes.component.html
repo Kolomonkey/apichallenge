@@ -1,0 +1,21 @@
+<div class='container'>
+
+  <api-episodes-view
+  [episodes$]='episodes$ | async'
+  (selectEpisode)='selectEpisode($event)'
+  (selectEpisode)='patchEpisodeForm($event)'
+  (deleteEpisode)='deleteEpisode($event)'
+  >
+
+  </api-episodes-view>
+
+  <api-episodes-details
+  [currentEpisode$]='currentEpisode$ | async'
+  [episodeForm]='episodeForm'
+  (submitEpisodeForm)='submitEpisodeForm($event)'
+  (resetEpisode)='resetEpisode()'
+  >
+
+  </api-episodes-details>
+
+</div>

@@ -27,3 +27,11 @@ export { PlayerFacade } from './lib/state/player/player.facade';
 export { Instrument } from './lib/core/instrument.model';
 export { InstrumentService } from './lib/core/instrument.service';
 export { InstrumentFacade } from './lib/state/instrument/instrument.facade';
+
+export { Planet } from './lib/core/planet.model';
+export { PlanetService } from './lib/core/planet.service';
+export { PlanetFacade } from './lib/state/planet/player.facade';
+
+export { Episode } from './lib/core/episode.model';
+export { EpisodeService } from './lib/core/episode.service';
+export { EpisodeFacade } from './lib/state/episode/episode.facade';

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 const BASE_URL = 'https://rickandmortyapi.com/api/character/';
 
@@ -11,7 +12,7 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getall() {
-    return this.http.get(`${BASE_URL}1,2,3,4,5,6`);
+    return this.http.get(`${BASE_URL}1,2,3,4,5,6`)
   }
 
   selectCharacter(id) {

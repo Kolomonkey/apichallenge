@@ -1,0 +1,21 @@
+<div class='container'>
+
+  <api-planets-view
+  [planets$]='planets$ | async'
+  (selectPlanet)='selectPlanet($event)'
+  (selectPlanet)='patchPlanetForm($event)'
+  (deletePlanet)='deletePlanet($event)'
+  >
+
+  </api-planets-view>
+
+  <api-planets-details
+  [currentPlanet$]='currentPlanet$ | async'
+  [planetForm]='planetForm'
+  (submitPlanetForm)='submitPlanetForm($event)'
+  (resetPlanet)='resetPlanet()'
+  >
+
+  </api-planets-details>
+
+</div>

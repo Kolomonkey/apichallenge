@@ -109,6 +109,18 @@
     },
     "instrument-e2e": {
       "tags": []
+    },
+    "planet": {
+      "tags": []
+    },
+    "planet-e2e": {
+      "tags": []
+    },
+    "episode": {
+      "tags": []
+    },
+    "episode-e2e": {
+      "tags": []
     }
   }
 }

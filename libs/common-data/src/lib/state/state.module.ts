@@ -17,13 +17,17 @@ import { PlayerFacade } from './player/player.facade';
 import { PlayerEffects } from './player/player.effects';
 import { InstrumentFacade } from './instrument/instrument.facade';
 import { InstrumentEffects } from './instrument/instrument.effects';
+import { PlanetEffects } from './planet/planet.effects';
+import { PlanetFacade } from './planet/player.facade';
+import { EpisodeEffects } from './episode/episode.effects';
+import { EpisodeFacade } from './episode/episode.facade';
 
 @NgModule({
   imports: [
     StoreModule.forRoot(reducers),
-    EffectsModule.forRoot([TodosEffects, AnimalEffects, TacoEffects, PizzaEffects, DrinkEffects, PlayerEffects, InstrumentEffects]),
+    EffectsModule.forRoot([TodosEffects, AnimalEffects, TacoEffects, PizzaEffects, DrinkEffects, PlayerEffects, InstrumentEffects, PlanetEffects, EpisodeEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25 })
   ],
-  providers: [TodosFacade, AnimalsFacade, TacoFacade, PizzaFacade, DrinkFacade, PlayerFacade, InstrumentFacade]
+  providers: [TodosFacade, AnimalsFacade, TacoFacade, PizzaFacade, DrinkFacade, PlayerFacade, InstrumentFacade, PlanetFacade, EpisodeFacade]
 })
 export class StateModule {}

@@ -10,6 +10,8 @@ import * as fromPizzas from './pizza/pizza.reducer';
 import * as fromDrinks from './drink/drink.reducer';
 import * as fromPlayers from './player/player.reducer';
 import * as fromInstruments from './instrument/instrument.reducer';
+import * as fromPlanets from './planet/planet.reducer';
+import * as fromEpisodes from './episode/episode.reducer';
 
 export interface AppState {
   todos: fromTodos.TodosState;
@@ -19,6 +21,8 @@ export interface AppState {
   drinks: fromDrinks.DrinkState,
   players: fromPlayers.PlayerState;
   instruments: fromInstruments.InstrumentState;
+  planets: fromPlanets.PlanetState;
+  episodes: fromEpisodes.EpisodeState;
 }
 
 export const reducers: ActionReducerMap<AppState> = {
@@ -28,8 +32,99 @@ export const reducers: ActionReducerMap<AppState> = {
   pizzas: fromPizzas.pizzaReducer,
   drinks: fromDrinks.drinkReducer,
   players: fromPlayers.playerReducer,
-  instruments: fromInstruments.instrumentReducer
+  instruments: fromInstruments.instrumentReducer,
+  planets: fromPlanets.planetReducer,
+  episodes: fromEpisodes.episodeReducer
 };
+
+//PLANET SELECTORS
+
+export const selectEpisodeEpisodesState = createFeatureSelector<fromEpisodes.EpisodeState>(
+  'episodes'
+);
+
+export const selectEpisodeIds = createSelector(
+  selectEpisodeEpisodesState,
+  fromEpisodes.selectEpisodeIds
+);
+
+export const selectEpisodeEntities = createSelector(
+  selectEpisodeEpisodesState,
+  fromEpisodes.selectEpisodeEntities
+);
+
+export const selectAllEpisodes = createSelector(
+  selectEpisodeEpisodesState,
+  fromEpisodes.selectAllEpisodes
+);
+
+export const selectEpisodeTotal = createSelector(
+  selectEpisodeEpisodesState,
+  fromEpisodes.selectEpisodeTotal
+);
+
+export const selectCurrentEpisodeId = createSelector(
+  selectEpisodeEpisodesState,
+  fromEpisodes.getSelectedEpisodeId
+)
+
+export const selectCurrentEpisode = createSelector(
+  selectEpisodeEntities,
+  selectCurrentEpisodeId,
+  (episodeEntities, episodeId) => {
+    const emptyEpisode = {
+      name: '',
+      climate: '',
+      population: null
+    };
+    return episodeId ? episodeEntities[episodeId] : emptyEpisode;
+  }
+)
+
+
+//PLANET SELECTORS
+
+export const selectPlanetPlanetsState = createFeatureSelector<fromPlanets.PlanetState>(
+  'planets'
+);
+
+export const selectPlanetIds = createSelector(
+  selectPlanetPlanetsState,
+  fromPlanets.selectPlanetIds
+);
+
+export const selectPlanetEntities = createSelector(
+  selectPlanetPlanetsState,
+  fromPlanets.selectPlanetEntities
+);
+
+export const selectAllPlanets = createSelector(
+  selectPlanetPlanetsState,
+  fromPlanets.selectAllPlanets
+);
+
+export const selectPlanetTotal = createSelector(
+  selectPlanetPlanetsState,
+  fromPlanets.selectPlanetTotal
+);
+
+export const selectCurrentPlanetId = createSelector(
+  selectPlanetPlanetsState,
+  fromPlanets.getSelectedPlanetId
+)
+
+export const selectCurrentPlanet = createSelector(
+  selectPlanetEntities,
+  selectCurrentPlanetId,
+  (planetEntities, planetId) => {
+    const emptyPlanet = {
+      name: '',
+      climate: '',
+      population: null
+    };
+    return planetId ? planetEntities[planetId] : emptyPlanet;
+  }
+)
 
 //INSTRUMENT SELECTORS
 
