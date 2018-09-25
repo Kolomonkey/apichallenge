@@ -35,3 +35,7 @@ export { PlanetFacade } from './lib/state/planet/player.facade';
 export { Episode } from './lib/core/episode.model';
 export { EpisodeService } from './lib/core/episode.service';
 export { EpisodeFacade } from './lib/state/episode/episode.facade';
+
+export { LocationFacade } from './lib/state/location/location.facade';
+export { LocationService } from './lib/core/location.service';
+export { Location } from './lib/core/location.model';

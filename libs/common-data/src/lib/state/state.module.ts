@@ -21,13 +21,15 @@ import { PlanetEffects } from './planet/planet.effects';
 import { PlanetFacade } from './planet/player.facade';
 import { EpisodeEffects } from './episode/episode.effects';
 import { EpisodeFacade } from './episode/episode.facade';
+import { LocationFacade } from './location/location.facade';
+import { LocationEffects } from './location/location.effects';
 
 @NgModule({
   imports: [
     StoreModule.forRoot(reducers),
-    EffectsModule.forRoot([TodosEffects, AnimalEffects, TacoEffects, PizzaEffects, DrinkEffects, PlayerEffects, InstrumentEffects, PlanetEffects, EpisodeEffects]),
+    EffectsModule.forRoot([TodosEffects, AnimalEffects, TacoEffects, PizzaEffects, DrinkEffects, PlayerEffects, InstrumentEffects, PlanetEffects, EpisodeEffects, LocationEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25 })
   ],
-  providers: [TodosFacade, AnimalsFacade, TacoFacade, PizzaFacade, DrinkFacade, PlayerFacade, InstrumentFacade, PlanetFacade, EpisodeFacade]
+  providers: [TodosFacade, AnimalsFacade, TacoFacade, PizzaFacade, DrinkFacade, PlayerFacade, InstrumentFacade, PlanetFacade, EpisodeFacade, LocationFacade]
 })
 export class StateModule {}

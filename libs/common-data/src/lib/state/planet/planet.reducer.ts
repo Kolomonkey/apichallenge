@@ -21,19 +21,19 @@ export function planetReducer(
     }
 
     case PlanetActionTypes.PlanetsLoaded: {
-      return adapter.addAll(action.payload, state);
+      return this.adapter.addAll(action.payload, state);
     }
 
     case PlanetActionTypes.CreatePlanet: {
-      return adapter.addOne(action.payload, state);
+      return this.adapter.addOne(action.payload, state);
     }
 
     case PlanetActionTypes.UpdatePlanet: {
-      return adapter.upsertOne(action.payload, state);
+      return this.adapter.upsertOne(action.payload, state);
     }
 
     case PlanetActionTypes.DeletePlanet: {
-      return adapter.removeOne(action.payload.id, state);
+      return this.adapter.removeOne(action.payload.id, state);
     }
     default:
       return state;

@@ -121,6 +121,12 @@
     },
     "episode-e2e": {
       "tags": []
+    },
+    "location": {
+      "tags": []
+    },
+    "location-e2e": {
+      "tags": []
     }
   }
 }

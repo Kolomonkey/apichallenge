@@ -12,6 +12,7 @@ import * as fromPlayers from './player/player.reducer';
 import * as fromInstruments from './instrument/instrument.reducer';
 import * as fromPlanets from './planet/planet.reducer';
 import * as fromEpisodes from './episode/episode.reducer';
+import * as fromLocations from './location/location.reducer';
 
 export interface AppState {
   todos: fromTodos.TodosState;
@@ -23,6 +24,7 @@ export interface AppState {
   instruments: fromInstruments.InstrumentState;
   planets: fromPlanets.PlanetState;
   episodes: fromEpisodes.EpisodeState;
+  locations: fromLocations.LocationState;
 }
 
 export const reducers: ActionReducerMap<AppState> = {
@@ -34,8 +36,54 @@ export const reducers: ActionReducerMap<AppState> = {
   players: fromPlayers.playerReducer,
   instruments: fromInstruments.instrumentReducer,
   planets: fromPlanets.planetReducer,
-  episodes: fromEpisodes.episodeReducer
+  episodes: fromEpisodes.episodeReducer,
+  locations: fromLocations.locationReducer
 };
+
+//LOCATION SELECTORS
+
+export const selectLocationLocationsState = createFeatureSelector<fromLocations.LocationState>(
+  'locations'
+);
+
+export const selectLocationIds = createSelector(
+  selectLocationLocationsState,
+  fromLocations.selectLocationIds
+);
+
+export const selectLocationEntities = createSelector(
+  selectLocationLocationsState,
+  fromLocations.selectLocationEntities
+);
+
+export const selectAllLocations = createSelector(
+  selectLocationLocationsState,
+  fromLocations.selectAllLocations
+);
+
+export const selectLocationTotal = createSelector(
+  selectLocationLocationsState,
+  fromLocations.selectLocationTotal
+);
+
+export const selectCurrentLocationId = createSelector(
+  selectLocationLocationsState,
+  fromLocations.getSelectedLocationId
+)
+
+export const selectCurrentLocation = createSelector(
+  selectLocationEntities,
+  selectCurrentLocationId,
+  (locationEntities, locationId) => {
+    const emptyLocation = {
+      id: null,
+      name: '',
+      type: '',
+      dimension: ''
+    };
+    return locationId ? locationEntities[locationId] : emptyLocation;
+  }
+)
 
 //PLANET SELECTORS
 

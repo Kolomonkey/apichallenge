@@ -1,0 +1,21 @@
+<div class='container'>
+
+  <api-locations-view
+  [locations$]='locations$ | async'
+  (selectLocation)='selectLocation($event)'
+  (selectLocation)='patchLocationForm($event)'
+  (deleteLocation)='deleteLocation($event)'
+  >
+
+  </api-locations-view>
+
+  <api-locations-details
+  [currentLocation$]='currentLocation$ | async'
+  [locationForm]='locationForm'
+  (submitLocationForm)='submitLocationForm($event)'
+  (resetLocation)='resetLocation()'
+  >
+
+  </api-locations-details>
+
+</div>
