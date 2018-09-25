@@ -1,3 +1,4 @@
+import { VideogameService } from './core/videogame.service';
 import { TodoService } from './core/todo.service';
 import { AnimalService } from './core/animal.service';
 import { NgModule } from '@angular/core';
@@ -16,6 +17,6 @@ import { LocationService } from './core/location.service';
 @NgModule({
   imports: [CommonModule, HttpClientModule, StateModule],
   exports: [StateModule, HttpClientModule],
-  providers: [TodoService, AnimalService, TacoService, PizzaService, DrinkService, PlayerService, InstrumentService, PlanetService, EpisodeService, LocationService]
+  providers: [TodoService, AnimalService, TacoService, PizzaService, DrinkService, PlayerService, InstrumentService, PlanetService, EpisodeService, LocationService, VideogameService]
 })
 export class CommonDataModule {}

@@ -13,6 +13,7 @@ import * as fromInstruments from './instrument/instrument.reducer';
 import * as fromPlanets from './planet/planet.reducer';
 import * as fromEpisodes from './episode/episode.reducer';
 import * as fromLocations from './location/location.reducer';
+import * as fromVideogames from './videogame/videogame.reducer';
 
 export interface AppState {
   todos: fromTodos.TodosState;
@@ -25,6 +26,7 @@ export interface AppState {
   planets: fromPlanets.PlanetState;
   episodes: fromEpisodes.EpisodeState;
   locations: fromLocations.LocationState;
+  videogames: fromVideogames.VideogameState;
 }
 
 export const reducers: ActionReducerMap<AppState> = {
@@ -37,8 +39,58 @@ export const reducers: ActionReducerMap<AppState> = {
   instruments: fromInstruments.instrumentReducer,
   planets: fromPlanets.planetReducer,
   episodes: fromEpisodes.episodeReducer,
-  locations: fromLocations.locationReducer
+  locations: fromLocations.locationReducer,
+  videogames: fromVideogames.videogameReducer
 };
+
+//VIDEOGAME SELECTORS
+export const selectVideogameVideogamesState = createFeatureSelector<fromVideogames.VideogameState>(
+  'videogames'
+);
+
+export const selectVideogameIds = createSelector(
+  selectVideogameVideogamesState,
+  fromVideogames.selectVideogameIds
+)
+
+export const selectVideogameEntities = createSelector(
+  selectVideogameVideogamesState,
+  fromVideogames.selectVideogameEntities
+)
+
+export const selectAllVideogames = createSelector(
+  selectVideogameVideogamesState,
+  fromVideogames.selectAllVideogames
+)
+
+export const selectVideogameTotal = createSelector(
+  selectVideogameVideogamesState,
+  fromVideogames.selectVideogameTotal
+)
+
+export const selectCurrentVideogameId = createSelector(
+  selectVideogameVideogamesState,
+  fromVideogames.getSelectedVideogameId
+)
+
+export const selectCurrentVideogame = createSelector(
+  selectVideogameEntities,
+  selectCurrentVideogameId,
+  (videogameEntities, videogameId) => {
+    const emptyVideogame = {
+      id: null,
+      name: '',
+      publisher: '',
+      released: ''
+    };
+    return videogameId ? videogameEntities[videogameId] : emptyVideogame;
+  }
+)
+
+export const isVideogamesLoading = createSelector(
+  selectVideogameVideogamesState,
+  fromVideogames.isLoading
+)
 
 //LOCATION SELECTORS
 

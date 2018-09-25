@@ -39,3 +39,7 @@ export { EpisodeFacade } from './lib/state/episode/episode.facade';
 export { LocationFacade } from './lib/state/location/location.facade';
 export { LocationService } from './lib/core/location.service';
 export { Location } from './lib/core/location.model';
+
+export { Videogame } from './lib/core/videogame.model';
+export { VideogameService } from './lib/core/videogame.service';
+export { VideogameFacade } from './lib/state/videogame/videogame.facade';

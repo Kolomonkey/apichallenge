@@ -1,0 +1,21 @@
+<div class='container'>
+
+  <api-videogames-view
+  [videogames$]='videogames$ | async'
+  (selectVideogame)='selectVideogame($event)'
+  (selectVideogame)='patchVideogameForm($event)'
+  (deleteVideogame)='deleteVideogame($event)'
+  >
+
+  </api-videogames-view>
+
+  <api-videogames-details
+  [currentVideogame$]='currentVideogame$ | async'
+  [videogameForm]='videogameForm'
+  (submitVideogameForm)='submitVideogameForm($event)'
+  (resetVideogame)='resetVideogame()'
+  >
+
+  </api-videogames-details>
+
+</div>

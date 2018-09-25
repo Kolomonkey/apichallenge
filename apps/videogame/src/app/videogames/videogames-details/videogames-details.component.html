@@ -1,0 +1,32 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1 *ngIf='!currentVideogame$?.name else videogameName'>Create A Videogame!</h1>
+      <ng-template #videogameName><h1>{{currentVideogame$?.name}}</h1></ng-template>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <form [formGroup]='videogameForm' #form='ngForm' (ngSubmit)='submitSubmitVideogameForm(form.value); resetVideogameForm(form)'>
+      <mat-form-field appearance='outline'>
+        <mat-label>Name</mat-label>
+        <input matInput formControlName='name' placeholder='Name'>
+      </mat-form-field>
+
+      <mat-form-field appearance='outline'>
+        <mat-label>Publisher</mat-label>
+        <input matInput formControlName='publisher' placeholder='Publiser'>
+      </mat-form-field>
+
+      <mat-form-field appearance='outline'>
+        <mat-label>Released</mat-label>
+        <input matInput formControlName='released' placeholder='Released'>
+      </mat-form-field>
+
+
+      <button mat-raised-button color='primary' type='submit' [disabled]='!form.valid'>SUBMIT</button>
+      <button mat-raised-button color='warn' type='reset' (click)='resetVideogameForm(form)'>CANCEL</button>
+
+    </form>
+  </mat-card-content>
+</mat-card>

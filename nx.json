@@ -127,6 +127,12 @@
     },
     "location-e2e": {
       "tags": []
+    },
+    "videogame": {
+      "tags": []
+    },
+    "videogame-e2e": {
+      "tags": []
     }
   }
 }
